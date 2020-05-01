@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<!-- Table -->
-		<table border="0" cellpadding="10" cellspacing="0" style="text-align: center;">
+		<table border="1" cellpadding="10" cellspacing="0" style="text-align: center;">
 			<thead>
 				<tr>
 					<th>#</th>
@@ -31,9 +31,8 @@
 							<input type="text" id="lastName">
 						</form>
 					</td>
-					<td><button type="button" id="add">Thêm</button></td>	
-				</tr>
-				
+					<td><a href="javascript:void(0)" id="add">Thêm</a></td>	
+				</tr
 			</tfoot>
 
 			<tbody>
@@ -41,36 +40,40 @@
 					<td>1</td>
 					<td>Mark</td>
 					<td>Otto</td>
-					<td><button type="button" class="del">Xóa</button></td>
+					<td><a href="javascript:void(0)" class="del">Xóa</a></td>
 				</tr>
 				<tr>
 					<td>2</td>
 					<td>Jacob</td>
 					<td>Thornton</td>
-					<td><button type="button" class="del">Xóa</button></td>
+					<td><a href="javascript:void(0)" class="del">Xóa</a></td>
 				</tr>
 				<tr>
 					<td>3</td>
 					<td>Larry</td>
 					<td>the Bird</td>
-					<td><button type="button" class="del">Xóa</button></td>
+					<td><a href="javascript:void(0)" class="del">Xóa</a></td>
 				</tr>
 			</tbody>
 		</table>
 
 		<!-- Script -->
 		<script type="text/javascript">
-			 	$(".del").click(function() {
-			 		$(this).parents("tr").remove();	
-			 	});
+			function deleteRow() {
+				$(this).parents("tr").remove();	
+			}
+			$(document).on("click", ".del", deleteRow);
 
-			 	$("#add").click(function(){
-			 		var rowCount = $('table tbody tr').length + 1;
-				 	let _firstName = document.getElementById("firstName").value;
-		            let _lastName = document.getElementById("lastName").value;
-	            	let _newRow = "<tr><td>" + rowCount  + "</td><td>" + _firstName + "</td><td>" + _lastName + "</td></tr>";
-			 		$("table tbody").append(_newRow);	
-			 	});
+			function addRow() {
+				var _firstName = document.getElementById('firstName').value;
+				var _lastName = document.getElementById('lastName').value;
+				var _deleteBtn = '<a href="javascript:void(0)" class="del">Xóa</a>';
+				var _rowCount = $('table tbody tr').length + 1;
+				var _newRow = '<tr><td>'+ _rowCount +'</td><td>'+ _firstName +'</td><td>'+ _lastName +'</td><td>'+ _deleteBtn +'</td></tr>';
+				$("table tbody").append(_newRow);
+				$("input").val("");
+			}
+			$(document).on("click", "#add", addRow)
 		</script>
 	</body>
 </html>
