@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercise1</title>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+	</head>
+	<body>
+		<!-- Table -->
+		<table border="0" cellpadding="10" cellspacing="0" style="text-align: center;">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>First</th>
+					<th>Last</th>
+					<th>Function</th>	
+				</tr>
+				
+			</thead>
+
+			<tfoot>
+				<tr>
+					<td></td>
+					<td>
+						<form method="get">
+							<input type="text" id="firstName">
+						</form>
+					</td>
+					<td>
+						<form method="get">
+							<input type="text" id="lastName">
+						</form>
+					</td>
+					<td><button type="button" id="add">Thêm</button></td>	
+				</tr>
+				
+			</tfoot>
+
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>Mark</td>
+					<td>Otto</td>
+					<td><button type="button" class="del">Xóa</button></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Jacob</td>
+					<td>Thornton</td>
+					<td><button type="button" class="del">Xóa</button></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Larry</td>
+					<td>the Bird</td>
+					<td><button type="button" class="del">Xóa</button></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<!-- Script -->
+		<script type="text/javascript">
+			 	$(".del").click(function() {
+			 		$(this).parents("tr").remove();	
+			 	});
+
+			 	$("#add").click(function(){
+			 		var rowCount = $('table tbody tr').length + 1;
+				 	let _firstName = document.getElementById("firstName").value;
+		            let _lastName = document.getElementById("lastName").value;
+	            	let _newRow = "<tr><td>" + rowCount  + "</td><td>" + _firstName + "</td><td>" + _lastName + "</td></tr>";
+			 		$("table tbody").append(_newRow);	
+			 	});
+		</script>
+	</body>
+</html>
