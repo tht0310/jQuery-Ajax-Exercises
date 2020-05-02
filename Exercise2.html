@@ -193,7 +193,6 @@
     <script type="text/javascript">    
     $("#ViewMore").click(function(){
         $.get("http://66.42.50.227/data-ajax.php", {GetProducts : "All"}, function(data) {
-            console.log(data);
             var str = $("#RelatedProducts").html();
             for (var i = 0; i < data.length; i++) {
                 str += `<div class="col-xl-3 col-12 item"> 
