@@ -37,19 +37,19 @@
 
 			<tbody>
 				<tr>
-					<td>1</td>
+					<th>1</th>
 					<td>Mark</td>
 					<td>Otto</td>
 					<td><a href="javascript:void(0)" class="del">Xóa</a></td>
 				</tr>
 				<tr>
-					<td>2</td>
+					<th>2</th>
 					<td>Jacob</td>
 					<td>Thornton</td>
 					<td><a href="javascript:void(0)" class="del">Xóa</a></td>
 				</tr>
 				<tr>
-					<td>3</td>
+					<th>3</th>
 					<td>Larry</td>
 					<td>the Bird</td>
 					<td><a href="javascript:void(0)" class="del">Xóa</a></td>
@@ -69,7 +69,7 @@
 				var _lastName = document.getElementById('lastName').value;
 				var _deleteBtn = '<a href="javascript:void(0)" class="del">Xóa</a>';
 				var _rowCount = $('table tbody tr').length + 1;
-				var _newRow = '<tr><td>'+ _rowCount +'</td><td>'+ _firstName +'</td><td>'+ _lastName +'</td><td>'+ _deleteBtn +'</td></tr>';
+				var _newRow = '<tr><th>'+ _rowCount +'</th><td>'+ _firstName +'</td><td>'+ _lastName +'</td><td>'+ _deleteBtn +'</td></tr>';
 				$("table tbody").append(_newRow);
 				$("input").val("");
 			}
