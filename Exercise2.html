@@ -191,23 +191,23 @@
     <footer>Footer</footer>
 
     <script type="text/javascript">    
-    $("#ViewMore").click(function(){
-        $.get("http://66.42.50.227/data-ajax.php", {GetProducts : "All"}, function(data) {
-            var str = $("#RelatedProducts").html();
-            for (var i = 0; i < data.length; i++) {
-                str += `<div class="col-xl-3 col-12 item"> 
-                            <article>
-                                <a href="">
-                                    <img class="image" src="${data[i].Image_URL}" alt=""></a>
-                                <div class="giam-gia">-50%</div>
-                                <a href=""><div class="ten-sp">${data[i].Name}</div></a>
-                                <div class="gia">${data[i].Price} đ <span class="gia-goc">5.000.000 đ</span></div>
-                            </article>
-                        </div>`;
-            }  
-            let _relativeProducts = $("#RelatedProducts").html(str);
-        }, "json");        
-    });
+        $("#ViewMore").click(function(){
+            $.get("http://66.42.50.227/data-ajax.php", {GetProducts : "All"}, function(data) {
+                var str = $("#RelatedProducts").html();
+                for (var i = 0; i < data.length; i++) {
+                    str += `<div class="col-xl-3 col-12 item"> 
+                                <article>
+                                    <a href="">
+                                        <img class="image" src="${data[i].Image_URL}" alt=""></a>
+                                    <div class="giam-gia">-50%</div>
+                                    <a href=""><div class="ten-sp">${data[i].Name}</div></a>
+                                    <div class="gia">${data[i].Price} đ <span class="gia-goc">5.000.000 đ</span></div>
+                                </article>
+                            </div>`;
+                }  
+                let _relativeProducts = $("#RelatedProducts").html(str);
+            }, "json");        
+        });
     </script>
 </body>
 </html>
