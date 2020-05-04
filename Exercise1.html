@@ -62,7 +62,7 @@
 			function deleteRow() {
 				$(this).parents("tr").remove();	
 			}
-			$(document).on("click", ".del", deleteRow);
+			$("table").on("click", ".del", deleteRow);
 
 			function addRow() {
 				var _firstName = document.getElementById('firstName').value;
@@ -73,7 +73,7 @@
 				$("table tbody").append(_newRow);
 				$("input").val("");
 			}
-			$(document).on("click", "#add", addRow)
+			$("table").on("click", "#add", addRow)
 		</script>
 	</body>
 </html>
